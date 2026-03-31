@@ -461,7 +461,7 @@ export default function DinkRadar() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 10, cursor: "pointer" }} onClick={resetQuiz}>
-          <RadarIcon size={32} />
+          <img src="/DinkRadar_Logo-2.png" alt="DinkRadar" style={{ width: 36, height: 36, objectFit: "contain" }} />
           <span
             style={{
               fontFamily: "'Chakra Petch', sans-serif",
@@ -1031,7 +1031,7 @@ export default function DinkRadar() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginBottom: 8 }}>
-          <RadarIcon size={20} />
+          <img src="/DinkRadar_Logo-2.png" alt="DinkRadar" style={{ width: 24, height: 24, objectFit: "contain" }} />
           <span style={{ fontFamily: "'Chakra Petch', sans-serif", fontWeight: 700, fontSize: 14, color: BRAND.yellow, letterSpacing: 2 }}>DINKRADAR</span>
         </div>
         <p style={{ fontSize: 12, color: BRAND.gray, opacity: 0.5 }}>
