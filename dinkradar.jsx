@@ -4,19 +4,19 @@ import { useState, useEffect, useRef } from "react";
 // KIT (CONVERTKIT) CONFIG — PASTE YOUR INFO HERE
 // ============================================
 const KIT_CONFIG = {
-  apiKey: "YOUR_API_KEY_HERE",       // Kit → Settings → Developer → API Key
-  formId: "YOUR_FORM_ID_HERE",      // The number from your form URL
+  apiKey: "CHbGr5B1JyqJxqxRlzEC0w",       // Kit → Settings → Developer → API Key
+  formId: "9270109",      // The number from your form URL
   tags: {
     // Go to Kit → Subscribers → Tags → click each tag → grab the ID from the URL
-    "beginner": "TAG_ID_HERE",
-    "intermediate": "TAG_ID_HERE",
-    "advanced": "TAG_ID_HERE",
-    "power": "TAG_ID_HERE",
-    "control": "TAG_ID_HERE",
-    "all-around": "TAG_ID_HERE",
-    "budget-under-100": "TAG_ID_HERE",
-    "budget-100-200": "TAG_ID_HERE",
-    "budget-200-plus": "TAG_ID_HERE",
+    "beginner": "18460320",
+    "intermediate": "18460320",
+    "advanced": "18460322",
+    "power": "18460323",
+    "control": "18460324",
+    "all-around": "18460326",
+    "budget-under-100": "18460328",
+    "budget-100-200": "18460330",
+    "budget-200-plus": "18460331",
   },
 };
 
@@ -1194,7 +1194,7 @@ export default function DinkRadar() {
               </div>
 
               {!unlocked ? (
-                <div style={{ position: "relative" }}>
+                <div style={{ position: "relative", maxHeight: 420, overflow: "hidden", borderRadius: 16 }}>
                   {/* Blurred cards */}
                   <div style={{ filter: "blur(8px)", opacity: 0.5, pointerEvents: "none", userSelect: "none" }}>
                     {recommendations.slice(0, 2).map((p, i) => (
