@@ -1146,8 +1146,8 @@ export default function DinkRadar() {
               </div>
             )}
 
-            {/* #1 Pick - Always visible */}
-            {recommendations[0] && (
+            {/* #3 Pick - Always visible (free teaser) */}
+            {recommendations[2] && (
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
                   <div
@@ -1155,24 +1155,24 @@ export default function DinkRadar() {
                       fontFamily: "'Chakra Petch', sans-serif",
                       fontSize: 12,
                       fontWeight: 700,
-                      color: BRAND.blue,
-                      background: BRAND.yellow,
+                      color: BRAND.gray,
+                      border: `1px solid ${BRAND.grayDark}`,
                       padding: "4px 12px",
                       borderRadius: 4,
                       letterSpacing: 2,
                       textTransform: "uppercase",
                     }}
                   >
-                    #1 Match
+                    #3 Match
                   </div>
-                  <div style={{ fontSize: 13, color: BRAND.gray, fontFamily: "'Chakra Petch', sans-serif" }}>Best overall pick for you</div>
+                  <div style={{ fontSize: 13, color: BRAND.gray, fontFamily: "'Chakra Petch', sans-serif" }}>A solid option for your play style</div>
                 </div>
 
-                <PaddleCard paddle={recommendations[0]} rank={1} />
+                <PaddleCard paddle={recommendations[2]} rank={3} />
               </div>
             )}
 
-            {/* #2 and #3 - Blurred or visible */}
+            {/* #1 and #2 - Blurred or visible (gated behind email) */}
             <div style={{ marginTop: 32 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
                 <div
@@ -1180,25 +1180,26 @@ export default function DinkRadar() {
                     fontFamily: "'Chakra Petch', sans-serif",
                     fontSize: 12,
                     fontWeight: 700,
-                    color: BRAND.gray,
-                    border: `1px solid ${BRAND.grayDark}`,
+                    color: BRAND.blue,
+                    background: BRAND.yellow,
                     padding: "4px 12px",
                     borderRadius: 4,
                     letterSpacing: 2,
                     textTransform: "uppercase",
                   }}
                 >
-                  #2 & #3 Matches
+                  #1 & #2 Matches
                 </div>
+                <div style={{ fontSize: 13, color: BRAND.gray, fontFamily: "'Chakra Petch', sans-serif" }}>Your best picks</div>
               </div>
 
               {!unlocked ? (
                 <div style={{ position: "relative" }}>
                   {/* Blurred cards */}
                   <div style={{ filter: "blur(8px)", opacity: 0.5, pointerEvents: "none", userSelect: "none" }}>
-                    {recommendations.slice(1, 3).map((p, i) => (
+                    {recommendations.slice(0, 2).map((p, i) => (
                       <div key={i} style={{ marginBottom: 16 }}>
-                        <PaddleCard paddle={p} rank={i + 2} />
+                        <PaddleCard paddle={p} rank={i + 1} />
                       </div>
                     ))}
                   </div>
@@ -1227,10 +1228,10 @@ export default function DinkRadar() {
                           marginBottom: 8,
                         }}
                       >
-                        Unlock Your Full Results
+                        Unlock Your #1 Pick
                       </h3>
                       <p style={{ fontSize: 14, color: BRAND.gray, marginBottom: 24, fontWeight: 300, lineHeight: 1.6 }}>
-                        Get your complete top 3, detailed breakdowns, and exclusive gear deals.
+                        Your best overall match and runner-up are waiting. Drop your email to reveal them.
                       </p>
 
                       <input
@@ -1297,7 +1298,7 @@ export default function DinkRadar() {
                           opacity: submitting ? 0.7 : 1,
                         }}
                       >
-                        {submitting ? "Unlocking..." : "Unlock My Results"}
+                        {submitting ? "Unlocking..." : "Reveal My #1 Pick"}
                       </button>
 
                       {submitError && (
@@ -1314,9 +1315,9 @@ export default function DinkRadar() {
                 </div>
               ) : (
                 <div>
-                  {recommendations.slice(1, 3).map((p, i) => (
+                  {recommendations.slice(0, 2).map((p, i) => (
                     <div key={i} style={{ marginBottom: 16 }}>
-                      <PaddleCard paddle={p} rank={i + 2} />
+                      <PaddleCard paddle={p} rank={i + 1} />
                     </div>
                   ))}
                 </div>
