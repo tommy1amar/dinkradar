@@ -739,6 +739,21 @@ export default function DinkRadar() {
     link.href = "https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap";
     link.rel = "stylesheet";
     document.head.appendChild(link);
+
+    // Fix iOS Safari white areas
+    document.documentElement.style.backgroundColor = BRAND.blueDark;
+    document.body.style.backgroundColor = BRAND.blueDark;
+    document.body.style.margin = "0";
+    document.body.style.padding = "0";
+
+    // Set theme-color meta tag for browser chrome
+    let meta = document.querySelector('meta[name="theme-color"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.name = "theme-color";
+      document.head.appendChild(meta);
+    }
+    meta.content = BRAND.blueDark;
   }, []);
 
   const transition = (callback) => {
